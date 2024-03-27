@@ -1,16 +1,40 @@
-// models/userModel.js
-const { createClient } = require('@supabase/supabase-js');
+const { createClient } = require("@supabase/supabase-js");
+require("dotenv").config();
 
-const supabase = createClient('https://clencqbfytkzoqzhzmfc.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNsZW5jcWJmeXRrem9xemh6bWZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE1MzM0NzksImV4cCI6MjAyNzEwOTQ3OX0.uHcIzlNuwkQ1dhyRvze3cogwlrSArStaNi5TivJev0o');
+//i use supabase for backend wich is a famous
+const supabase = createClient(process.env.SUPA_URL, process.env.SUPA_KEY);
 
 class UserModel {
   async getUsers() {
-    const { data, error } = await supabase.from('users').select('*');
+    const { data, error } = await supabase.from("users").select("*");
     if (error) throw error;
     return data;
   }
 
-  // Add other methods for user CRUD operations
+  async createUser(userData) {
+    try {
+      const { error } = await supabase.from("users").insert(userData);
+      console.log("inserted");
+      if (error) throw error;
+      return "success";
+    } catch (error) {
+      throw error;
+    }
+  }
+  async updateUser(email, userData) {
+    console.log(email);
+    console.log(userData);
+    try {
+      const { error } = await supabase
+        .from("users")
+        .update(userData)
+        .eq("email", email);
+      if (error) throw error;
+      return "success";
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = new UserModel();
