@@ -18,39 +18,38 @@ This is a simple Event Review Application developed using Node.js and Supabase. 
 - JSON Web Tokens (JWT): Used for authentication and securing API endpoints.
 - Other dependencies: `@supabase/supabase-js` for Supabase client, `jsonwebtoken` for JWT authentication, etc.
 
+## Database Diagram
+<img width="623" alt="uml" src="https://github.com/vy211/ReviewApp/assets/29013344/7ae9b519-d0e5-4b9e-b0ba-756e23fc0fa5">
+
+
 ## Setup Instructions
 
 1. **Clone the Repository**: Clone this repository to your local machine using the following command:
 
    ```bash
-   git clone https://github.com/your-username/event-review-app.git
+   git clone https://github.com/vy211/ReviewApp.git
    ```
 
 
 Sure, here's the continuation of the README content:
 
-markdown
-Copy code
-Install Dependencies: Navigate to the project directory and install the dependencies using npm or yarn:
-Copy code
 ```bash
-cd event-review-app
+cd ReviewApp
 npm install
 ```
 Set Up Supabase: Sign up for a free account on Supabase and create a new project. Obtain your Supabase URL and Anon Key.
 
 Configure Supabase: Create a .env file in the root directory of the project and add your Supabase URL and Anon Key:
-
-makefile
-Copy code
-SUPABASE_URL=your_supabase_url
-SUPABASE_ANON_KEY=your_supabase_anon_key
+```bash
+PORT = 7000
+SUPA_URL = https://clencqbfytkzoqzhzmfc.supabase.co
+SUPA_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNsZW5jcWJmeXRrem9xemh6bWZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE1MzM0NzksImV4cCI6MjAyNzEwOTQ3OX0.uHcIzlNuwkQ1dhyRvze3cogwlrSArStaNi5TivJev0o
+```
 Start the Application: Run the application using the following command:
-
-bash
-Copy code
+```bash
 npm start
-Access the Application: Open your web browser and navigate to http://localhost:3000 to access the Event Review Application.
+```
+Access the Application: Open your web browser and navigate to http://localhost:7000 to access the Event Review Application.
 
 Usage
 Sign Up: Create a new user account by providing your name, email, and password.
@@ -64,23 +63,27 @@ Copy code
 event-review-app/
 │
 ├── controllers/          # Controllers for handling HTTP requests
-│   ├── AuthController.js # Controller for user authentication
-│   ├── EventController.js# Controller for managing events
-│   └── ReviewController.js # Controller for managing reviews
+│   ├── authController.js # Controller for user authentication
+│   ├── eventController.js # Controller for managing events
+|   ├── userController.js  #controller for managing the user 
+│   └── reviewController.js # Controller for managing reviews
 │
 ├── middleware/           # Middleware functions
 │   └── authMiddleware.js # Middleware for JWT authentication
 │
 ├── models/                # Models for interacting with the database
-│   ├── UserModel.js      # Model for user-related operations
-│   ├── EventModel.js     # Model for event-related operations
-│   └── ReviewModel.js    # Model for review-related operations
+│   ├── userModel.js      # Model for user-related operations
+│   ├── eventModel.js     # Model for event-related operations
+│   └── reviewModel.js    # Model for review-related operations
 │
 ├── routes/                # Route definitions
 │   ├── authRoutes.js     # Routes for user authentication
 │   ├── eventRoutes.js    # Routes for event-related operations
+|   ├── userRoutes.js     #Routes for directly manage user
 │   └── reviewRoutes.js   # Routes for review-related operations
+|
 │
 ├── supabase.js            # Supabase initialization
 ├── server.js              # Entry point of the application
 └── .env                    # Environment variables file
+```
