@@ -1,11 +1,11 @@
 const { supabase } = require("../supabase");
 
 class EventModel {
-  async createEvent({ title, description, date }) {
+  async createEvent({ name, description, event_date }) {
     try {
       const { data, error } = await supabase
         .from("events")
-        .insert([{ title, description, date }]);
+        .insert([{ name, description, event_date }]);
 
       if (error) {
         throw new Error(error.message);
