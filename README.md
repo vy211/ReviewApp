@@ -64,7 +64,7 @@ Leave Reviews: Users can leave reviews for events, including ratings and comment
 View Event Details: Users can view details of events, including associated reviews.
 Folder Structure
 ```bash
-event-review-app/
+ReviewApp/
 │
 ├── controllers/          # Controllers for handling HTTP requests
 │   ├── authController.js # Controller for user authentication
