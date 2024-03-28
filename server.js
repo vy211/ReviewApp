@@ -5,6 +5,7 @@ const eventRoutes = require("./routes/eventRoutes");
 const reviewRoutes = require("./routes/reviewRoutes");
 const authRoutes = require("./routes/authRoutes");
 const likeRoutes = require("./routes/likeRoutes");
+const reportRoutes = require("./routes/reportRoutes");
 const bodyParser = require("body-parser");
 
 //use supabase for backend its a famour RDBMS
@@ -17,6 +18,8 @@ app.use("/api", eventRoutes);
 app.use("/api", reviewRoutes);
 app.use("/api", authRoutes);
 app.use("/api", likeRoutes);
+app.use("/api", reportRoutes);
+
 
 
 
