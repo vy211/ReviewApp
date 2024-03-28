@@ -52,8 +52,8 @@ npm start
 Access the Application: Open your web browser and navigate to http://localhost:7000 to access the Event Review Application.
 
 ## Snapshot of Postman to using this
-<img width="960" alt="event" src="https://github.com/vy211/ReviewApp/assets/29013344/74958038-0c70-4a43-b1bf-1381791507f9">
 
+<img width="960" alt="event ndew" src="https://github.com/vy211/ReviewApp/assets/29013344/20e0792e-5370-4821-9b87-2f7c8e75d0e9">
 
 
 Usage
