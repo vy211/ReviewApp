@@ -1,14 +1,28 @@
-const { createClient } = require("@supabase/supabase-js");
 require("dotenv").config();
-
-//i use supabase for backend wich is a famous
-const supabase = createClient(process.env.SUPA_URL, process.env.SUPA_KEY);
+const { supabase } = require("../supabase");
 
 class UserModel {
   async getUsers() {
     const { data, error } = await supabase.from("users").select("*");
     if (error) throw error;
     return data;
+  }
+
+  async loginUser({ email, password }) {
+    try {
+      const { user, error } = await supabase.auth.signIn({
+        email,
+        password,
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      return user;
+    } catch (error) {
+      throw new Error(error.message);
+    }
   }
 
   async createUser(userData) {
