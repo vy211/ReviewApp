@@ -1,1 +1,2 @@
 # ReviewApp
+## NodeJs & Supabase (RDBMS)
