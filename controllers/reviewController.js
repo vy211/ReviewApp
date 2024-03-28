@@ -1,4 +1,3 @@
-// controllers/ReviewController.js
 const reviewModel = require("../models/reviewModel");
 
 class ReviewController {

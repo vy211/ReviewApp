@@ -1,5 +1,3 @@
-// controllers/reportController.js
-
 const reportModel = require("../models/reportModel");
 
 class ReportController {

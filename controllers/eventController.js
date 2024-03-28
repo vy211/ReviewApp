@@ -1,4 +1,3 @@
-// controllers/EventController.js
 const eventModel = require("../models/eventModel");
 
 class EventController {

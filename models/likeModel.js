@@ -1,5 +1,3 @@
-// models/likeModel.js
-
 const { supabase } = require("../supabase");
 
 class LikeModel {

@@ -1,5 +1,3 @@
-// models/reportModel.js
-
 const { supabase } = require("../supabase");
 
 class ReportModel {
