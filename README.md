@@ -51,6 +51,11 @@ npm start
 ```
 Access the Application: Open your web browser and navigate to http://localhost:7000 to access the Event Review Application.
 
+## Snapshot of Postman to using this
+<img width="960" alt="event" src="https://github.com/vy211/ReviewApp/assets/29013344/74958038-0c70-4a43-b1bf-1381791507f9">
+
+
+
 Usage
 Sign Up: Create a new user account by providing your name, email, and password.
 Log In: Log in to the application with your email and password.
